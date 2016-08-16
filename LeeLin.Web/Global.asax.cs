@@ -9,9 +9,6 @@ using System.Web.Routing;
 
 namespace LeeLin.Web
 {
-    // 注意: 有关启用 IIS6 或 IIS7 经典模式的说明，
-    // 请访问 http://go.microsoft.com/?LinkId=9394801
-
     public class MvcApplication : System.Web.HttpApplication
     {
         protected void Application_Start()
@@ -23,6 +20,29 @@ namespace LeeLin.Web
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
+        }
+
+        protected void Application_Error(Object sender, EventArgs e)
+        {
+            Exception lastError = Server.GetLastError();
+            if (lastError != null)
+            {
+                HttpException httpError = lastError as HttpException;
+                if (httpError != null)
+                {
+                    switch (httpError.GetHttpCode())
+                    {
+                        case 403:
+                            break;
+                        case 404:
+                            Response.Redirect("/404.html");
+                            break;
+                        case 500:
+                            break;
+                    }
+                }
+            }
+            Server.ClearError();
         }
     }
 }

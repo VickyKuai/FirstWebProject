@@ -42,6 +42,20 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LeeLin.DAL\LeeLin.DAL.csproj">
+      <Project>{3d5f8122-f473-4b13-9fb1-8e78dd8dd5e0}</Project>
+      <Name>LeeLin.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LeeLin.Model\LeeLin.Model.csproj">
+      <Project>{39bc9e05-c3c9-4a31-aa51-fca3ba35a1e7}</Project>
+      <Name>LeeLin.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LeeLin.Utility\LeeLin.Utility.csproj">
+      <Project>{38c0a7e4-1ce6-42ff-b183-0003704fc2b9}</Project>
+      <Name>LeeLin.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

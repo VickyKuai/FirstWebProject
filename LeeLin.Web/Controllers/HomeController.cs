@@ -12,6 +12,8 @@ namespace LeeLin.Web.Controllers
         {
             ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
 
+            //throw new ApplicationException("123");
+
             return View();
         }
 

@@ -187,15 +187,16 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\OnErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="ViewModels\AccountViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="404.html" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -253,6 +254,8 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Images\SysImg\jinggao.jpg" />
+    <Content Include="Images\SysImg\404.png" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -290,15 +293,6 @@
     <Content Include="Images\orderedList8.png" />
     <Content Include="Images\orderedList9.png" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
-    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
-    <Content Include="Views\Account\_RemoveExternalLoginsPartial.cshtml" />
-    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Manage.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
-    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -306,12 +300,28 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
+    <Content Include="Views\OnError\Error.cshtml" />
+    <Content Include="Views\Account\Logon.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LeeLin.BLL\LeeLin.BLL.csproj">
+      <Project>{5a0783ac-5b81-4744-ae45-5afd445464b6}</Project>
+      <Name>LeeLin.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LeeLin.Model\LeeLin.Model.csproj">
+      <Project>{39bc9e05-c3c9-4a31-aa51-fca3ba35a1e7}</Project>
+      <Name>LeeLin.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LeeLin.Utility\LeeLin.Utility.csproj">
+      <Project>{38c0a7e4-1ce6-42ff-b183-0003704fc2b9}</Project>
+      <Name>LeeLin.Utility</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
