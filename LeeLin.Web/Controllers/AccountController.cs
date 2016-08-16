@@ -8,7 +8,6 @@ using LeeLin.Utility;
 
 namespace LeeLin.Web.Controllers
 {
-    [Authorize]
     public class AccountController : Controller
     {
         public ActionResult Logon(LogonModel model ,string returnUrl)
