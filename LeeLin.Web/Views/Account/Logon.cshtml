@@ -1,0 +1,44 @@
+﻿@model LeeLin.Web.ViewModels.LogonModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Logon</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.returnUrl }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            <ol>
+                <li>
+                    @Html.LabelFor(m => m.UserName)
+                    @Html.TextBoxFor(m => m.UserName)
+                    @*@Html.ValidationMessageFor(m => m.UserName)*@
+                </li>
+                <li>
+                    @Html.LabelFor(m => m.Password)
+                    @Html.PasswordFor(m => m.Password)
+                    @*@Html.ValidationMessageFor(m => m.Password)*@
+                </li>
+                <li>
+                    @Html.LabelFor(m => m.imageValidate)
+                    @Html.TextBoxFor(m => m.imageValidate)
+                </li>
+                <li>
+                    @Html.CheckBoxFor(m => m.RememberMe)
+                    @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
+                </li>
+            </ol>
+            <input type="submit" value="登录" />
+        }
+    </div>
+</body>
+</html>
