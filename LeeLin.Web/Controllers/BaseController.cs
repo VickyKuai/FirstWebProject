@@ -10,8 +10,12 @@ namespace LeeLin.Web.Controllers
     {
         protected override void OnException(ExceptionContext filterContext)
         {
-            base.OnException(filterContext);
+            //标记异常已处理，则不会再执行Application_Error
+            filterContext.ExceptionHandled = true;
+            filterContext.Result = new RedirectResult(Url.Action("Error", "OnError"));
         }
+
+
        
     }
 }
